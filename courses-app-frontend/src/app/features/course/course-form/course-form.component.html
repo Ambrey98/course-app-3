@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <form [formGroup] = "courseForm">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" formControlName = "title" class = "form-control">
+        <div *ngIf = "title?.invalid && title?.touched" class="text-danger">Title is required</div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" formControlName = "description" class = "form-control"></textarea>
+        <div *ngIf = "description?.invalid && description?.touched" class="text-danger">Description is required</div>
+      </div>
+      <div class="form-group">
+        <label for="authorName">Author name</label>
+        <input type="text" name="authorName" formControlName = "authorName" class="form-control" >
+        <button (click)="createAuthor(courseForm.controls.authorName.value)"
+         class="btn btn-primary mt-3 mb-3">Create author</button>
+      </div>
+      <div class="form-group">
+        <h4>Authors list</h4>
+        <div *ngFor = "let author of authors; let i = index" formArrayName = "authors">
+          {{author}}
+          <button (click) = "removeAuthor(i)">Remove author</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration</label>
+        <input type="number" name="duration" formControlName = "duration" class="form-control">
+        <div *ngIf = "duration?.invalid && duration?.touched" class="text-danger">
+          <div [hidden] = "!duration?.errors?.required">
+            Duration is required
+          </div>
+          <div [hidden] = "!duration?.errors?.min">
+            Minimum duration is 0
+          </div>
+        </div>
+        <div>Duration: </div>
+      </div>
+    </form>
+  </div>
+</div>

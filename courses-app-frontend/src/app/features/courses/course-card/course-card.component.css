@@ -1,0 +1,16 @@
+.course-card-content {
+  margin-top: 20px;
+  padding: 20px;
+  border: 6px solid rgb(5, 114, 5);
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 3px 5px 10px;
+}
+
+.course-card-content__left {
+  width: 70%;
+}
+
+.authors {
+  display: inline-block;
+}

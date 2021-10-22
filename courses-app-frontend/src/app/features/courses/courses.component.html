@@ -1,0 +1,6 @@
+<app-header>
+  <p class="username">{{ username }}</p>
+  <app-button buttonText = "Logout" class="logoutBtn" (click) = "onLogoutBtn()"></app-button>
+</app-header>
+<app-search></app-search>
+<app-course-list [courses] = "courses"></app-course-list>

@@ -1,0 +1,6 @@
+<app-course-card *ngFor = "let course of courses" [courseCard] = "course">
+  <app-button buttonText = 'Show Course'></app-button>  
+  <app-button *ngIf = "isEditable" [iconName] = 'editIcon' [routerLink] = "['edit', course.id]"></app-button>
+  <app-button *ngIf = "isEditable" [iconName] = 'deleteIcon' (click) = "deleteCourse(course.id)"></app-button>
+</app-course-card>
+<router-outlet></router-outlet>

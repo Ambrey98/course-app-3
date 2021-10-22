@@ -1,0 +1,17 @@
+<div class="course-card-content">
+  <div class="course-card-content__left">
+    <h2 class="title">{{ courseCard?.title }}</h2>
+    <p class="description"> {{ courseCard?.description }} </p>
+  </div>
+  
+  <div class="course-card-content__right">
+    <p class="authors"*ngFor = "let author of authors; let i = index">
+      {{ author }}{{courseCard?.authors?.length === i+1 ? '' : ', '}}
+    </p>
+    <p class="duration">  {{ convertDuration(courseCard?.duration!) }}</p>
+    <p class="creationDate">{{  courseCard?.creationDate | date : 'dd.MM.yyyy'}}</p>
+    <ng-content></ng-content>
+    <ng-content></ng-content>
+    <ng-content></ng-content>
+  </div>
+</div>

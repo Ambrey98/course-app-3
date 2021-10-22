@@ -1,0 +1,15 @@
+button {
+  margin-right: 10px;
+}
+:hover {
+  background-color:rgb(56, 54, 54);
+}
+
+:focus {
+  color: blueviolet;
+  background-color:rgb(56, 54, 54);
+}
+
+:active {
+  color: black;
+}
